@@ -1,0 +1,57 @@
+@use 'colors' as *;
+@use 'typography' as *;
+
+:root {
+    --tg-theme-primary: #E3073C;
+    --tg-theme-primary-hover: #FF2D5F;
+    --tg-theme-primary-pressed: #B8052F;
+    --tg-theme-primary-deep: #780018;
+    --tg-theme-primary-rgb: 227, 7, 60;
+    --tg-theme-deep-rgb: 120, 0, 24;
+    --tg-silver: #9AA0A8;
+    --tg-charcoal: #101010;
+    --tg-page-bg: #121212;
+    --tg-section-bg: #181818;
+    --tg-card-bg: #1E1E1E;
+    --tg-border-color: #2C2C2C;
+
+    //@Font Family Declaration
+    @each $font-family, $shades in $theme-fonts {
+        @each $shade, $value in $shades {
+            --tg-#{$font-family}-#{$shade}: #{$value};
+        }
+    }
+
+
+    //@Font Size
+    @each $body, $shades in $font-size {
+        @each $shade, $value in $shades {
+            --tg-#{$body}-#{$shade}: #{$value};
+        }
+    }
+
+
+    //@Line Height
+    @each $line-height, $shades in $theme-lh {
+        @each $shade, $value in $shades {
+            --tg-#{$line-height}-#{$shade}: #{$value};
+        }
+    }
+
+
+    //@Color Declaration
+    @each $color, $shades in $colors {
+        @each $shade, $value in $shades {
+            --tg-#{$color}-#{$shade}: #{$value};
+        }
+    }
+
+
+    //@Font Weight Declaration
+    @each $fw, $shades in $font-weight {
+        @each $shade, $value in $shades {
+            --tg-#{$fw}-#{$shade}: #{$value};
+        }
+    }
+
+}

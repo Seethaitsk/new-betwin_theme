@@ -1,0 +1,46 @@
+{
+  "name": "mykd-nextjs",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "@types/node": "^20.17.0",
+    "bootstrap": "^5.3.2",
+    "next": "^14.2.18",
+    "react": "^18.2.0",
+    "react-countup": "^6.5.0",
+    "react-dom": "^18.2.0",
+    "react-helmet-async": "^2.0.3",
+    "react-hook-form": "^7.48.2",
+    "react-intersection-observer": "^9.5.3",
+    "react-modal-video": "^2.0.1",
+    "react-paginate": "^8.2.0",
+    "react-parallax-mouse": "^2.1.0",
+    "react-photo-view": "^1.2.3",
+    "react-range": "^1.8.14",
+    "react-router-dom": "^6.20.1",
+    "react-slick": "^0.29.0",
+    "react-timer-hook": "^3.0.7",
+    "react-toastify": "^9.1.3",
+    "sass": "^1.69.5",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^11.0.5",
+    "vivus": "^0.4.6",
+    "wow.js": "^1.2.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@types/react-modal-video": "^1.2.3",
+    "@types/react-slick": "^0.23.12",
+    "@types/vivus": "^0.4.7",
+    "typescript": "^5.2.2"
+  }
+}

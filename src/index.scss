@@ -1,0 +1,796 @@
+@font-face {
+  font-family: 'berlin_sans_fb_demibold';
+  src: url('/assets/fonts/berlin_sans_fb_demi_bold-webfont.woff2') format('woff2'),
+    url('/assets/fonts/berlin_sans_fb_demi_bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import '../public/assets/css/flaticon.css';
+@import '../public/assets/css/fontawesome-all.min.css';
+@import '../public/assets/css/spacing.css';
+@import '../public/assets/css/odometer.css';
+@import '../public/assets/css/tg-cursor.css';
+@import '../public/assets/css/animate.min.css';
+@import '../public/assets/scss/main.scss';
+
+// Universal Dark Theme & Text Readability
+:root {
+  --bs-body-bg: #121212 !important;
+  --bs-body-color: #adb0bc !important;
+  --bs-heading-color: #ffffff !important;
+  --bs-link-color: #E3073C !important;
+  --bs-link-decoration: none !important;
+  --bs-link-hover-color: #FF2D5F !important;
+  --bs-link-hover-decoration: none !important;
+  --tg-page-bg: #121212 !important;
+  --tg-section-bg: #181818 !important;
+  --tg-card-bg: #1E1E1E !important;
+  --tg-border-color: #2C2C2C !important;
+  --tg-body-color: #adb0bc !important;
+  --tg-heading-color: #ffffff !important;
+}
+
+// Global Underline Removal - Eliminate all unwanted underlines on links, buttons and text
+*:not(del):not(s):not(strike) {
+  text-decoration: none !important;
+}
+
+a,
+a *,
+a:link,
+a:visited,
+a:hover,
+a:hover *,
+a:focus,
+a:active,
+.btn,
+.btn *,
+button,
+button *,
+.tg-btn-1,
+.tg-btn-1 *,
+.tg-btn-2,
+.tg-btn-2 *,
+.tg-btn-3,
+.tg-btn-3 *,
+.tg-border-btn,
+.tg-border-btn *,
+.roadMap__btn,
+.roadMap__btn *,
+.play-btn,
+.play-btn *,
+.btn-play-game,
+.btn-play-game *,
+.footer-widget a,
+.footer-widget a *,
+.footer-widget ul.menu li a,
+.navigation a,
+.list-wrap a {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  border-bottom: none !important;
+}
+
+html,
+body {
+  background-color: #121212 !important;
+  color: #adb0bc !important;
+  min-height: 100vh;
+}
+
+.main--area {
+  background-color: #121212 !important;
+}
+
+// Universal Heading & Text Visibility
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title,
+.fw-title,
+.sub-title2 {
+  color: #ffffff !important;
+}
+
+p,
+.desc {
+  color: #adb0bc !important;
+}
+
+// About Area Dark Styling & Text Visibility
+.about__area {
+  background-color: #181818 !important;
+
+  .section__title .title {
+    color: #ffffff !important;
+  }
+
+  .about__content .title {
+    color: #ffffff !important;
+  }
+
+  .about__content .rate {
+    color: #E3073C !important;
+  }
+
+  .about__content p {
+    color: #adb0bc !important;
+  }
+
+  .about__content-list li {
+    background-color: #1E1E1E !important;
+    background-image: none !important;
+    border: 1px solid #2C2C2C !important;
+    color: #ffffff !important;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .about__btn-wrap ul li a {
+    background-color: #1E1E1E !important;
+    background-image: none !important;
+    border: 1px solid #2C2C2C !important;
+    color: #ffffff !important;
+
+    &:hover {
+      background-color: #E3073C !important;
+      border-color: #E3073C !important;
+      color: #ffffff !important;
+    }
+  }
+
+  .tg-btn-2 {
+    color: #ffffff !important;
+  }
+}
+
+// About Area Two (Journey Section) Red Theme & Dark Styling
+.about__area-two {
+  background-color: #121212 !important;
+  position: relative;
+  z-index: 1;
+
+  .section__title {
+    .title {
+      color: #ffffff !important;
+    }
+
+    &::after {
+      background-image: url(/assets/img/bg/title_shape.svg) !important;
+      filter: drop-shadow(0 0 8px rgba(227, 7, 60, 0.5));
+    }
+  }
+
+  .about__content-two p {
+    color: #adb0bc !important;
+  }
+
+  // The rotated background plate behind character - RED THEME
+  .about__funFact-images {
+    &::after {
+      background: linear-gradient(135deg, #FF2D5F 0%, #E3073C 60%, #9E0022 100%) !important;
+      opacity: 0.9 !important;
+      box-shadow: 0 10px 40px rgba(227, 7, 60, 0.4) !important;
+    }
+
+    &:hover {
+      &::after {
+        box-shadow: 0 10px 50px rgba(227, 7, 60, 0.6) !important;
+      }
+    }
+  }
+
+  .about__funFact-item {
+    .count {
+      color: #ffffff !important;
+
+      .formatting-mark {
+        color: #E3073C !important;
+      }
+    }
+
+    p {
+      color: #adb0bc !important;
+    }
+  }
+
+  .about__content-btns {
+    .tg-btn-3 {
+      color: #ffffff !important;
+
+      .svg-icon {
+        stroke: #E3073C !important;
+      }
+
+      &:hover {
+        .svg-icon {
+          stroke: #FF2D5F !important;
+          fill: rgba(227, 7, 60, 0.15) !important;
+        }
+      }
+    }
+
+    .popup-video {
+      color: #ffffff !important;
+
+      i {
+        border-color: rgba(255, 255, 255, 0.4) !important;
+        color: #E3073C !important;
+      }
+
+      &:hover {
+        color: #E3073C !important;
+
+        i {
+          background: #E3073C !important;
+          color: #ffffff !important;
+          border-color: #E3073C !important;
+          box-shadow: 0 0 20px rgba(227, 7, 60, 0.6) !important;
+        }
+      }
+    }
+  }
+
+  .about__funFact-trophy {
+    .icon {
+      &::after {
+        filter: drop-shadow(0 0 12px rgba(227, 7, 60, 0.5));
+      }
+    }
+
+    .content {
+      h5 {
+        color: #ffffff !important;
+      }
+
+      span {
+        color: #E3073C !important;
+      }
+    }
+  }
+}
+
+// Footer Dark Styling & Text Visibility
+.footer-style-one,
+footer {
+  background-color: #101010 !important;
+
+  .footer__top-wrap {
+    background-color: #101010 !important;
+    border-top: 1px solid #2C2C2C !important;
+  }
+
+  .footer-widget .fw-title {
+    color: #ffffff !important;
+  }
+
+  .footer-widget p,
+  .footer-text .desc {
+    color: #adb0bc !important;
+  }
+
+  .footer-widget ul.menu li a {
+    color: #adb0bc !important;
+
+    &:hover {
+      color: #E3073C !important;
+    }
+  }
+
+  .footer-text .social-title {
+    color: #ffffff !important;
+
+    span {
+      color: #E3073C !important;
+    }
+  }
+
+  .footer-newsletter p {
+    color: #adb0bc !important;
+  }
+
+  .footer-newsletter-form input[type="email"] {
+    background: #1E1E1E !important;
+    color: #ffffff !important;
+    border: 1px solid #2C2C2C !important;
+
+    &::placeholder {
+      color: #6c757d !important;
+    }
+  }
+
+  .copyright__wrap {
+    background-color: #0c0c0c !important;
+    border-top: 1px solid #1f1f1f !important;
+
+    p,
+    span {
+      color: #888888 !important;
+    }
+  }
+}
+
+// RoadMap Red Theme & Interactive Animations (No Blurry Glow)
+.roadMap__area {
+  *,
+  .roadMap__content *,
+  .roadMap__steps-wrap *,
+  .roadMap__list *,
+  .roadMap__list li {
+    text-shadow: none !important;
+  }
+}
+
+.roadMap__steps-wrap::before {
+  background: linear-gradient(180deg, #E3073C 0%, #780018 100%) !important;
+}
+
+.roadMap__steps-item {
+  background-color: #1E1E1E !important;
+  border: 1px solid #2C2C2C !important;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.35s ease !important;
+
+  &:hover {
+    border-color: rgba(227, 7, 60, 0.5) !important;
+    transform: translateX(5px);
+  }
+
+  &::before {
+    border-color: transparent transparent transparent #E3073C !important;
+    transition: opacity 0.3s ease !important;
+  }
+
+  &.active {
+    border-color: #E3073C !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+
+    &::before {
+      opacity: 1 !important;
+    }
+  }
+}
+
+// RoadMap Step Dots - Solid Red Fill & Clean Crisp (No Blurry Glow)
+.roadMap__list li {
+  color: #c9ccd6 !important;
+  transition: all 0.25s ease !important;
+  margin-bottom: 8px !important;
+  text-shadow: none !important;
+
+  // All Dots Solid Red Fill - No Blur / No Halo
+  &::before {
+    background-color: #E3073C !important;
+    border: 2px solid #E3073C !important;
+    box-shadow: none !important;
+    filter: none !important;
+    transition: all 0.25s ease !important;
+  }
+
+  &.active {
+    color: #ffffff !important;
+    text-shadow: none !important;
+
+    &::before {
+      background-color: #E3073C !important;
+      border: 2px solid #E3073C !important;
+      box-shadow: none !important;
+      filter: none !important;
+    }
+  }
+
+  &:hover {
+    color: #ffffff !important;
+    text-shadow: none !important;
+
+    &::before {
+      background-color: #FF2D5F !important;
+      border-color: #FF2D5F !important;
+      box-shadow: none !important;
+      filter: none !important;
+    }
+  }
+}
+
+// Floating Phone Visual Animation (Clean Drop Shadow, No Red Glow)
+.tg-floating-phone {
+  animation: floatRoadmapPhone 4s ease-in-out infinite alternate !important;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.85)) !important;
+}
+
+@keyframes floatRoadmapPhone {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-16px) rotate(1.5deg);
+  }
+}
+
+// Letter Animation Keyframes (Character-by-Character Reveal - No Text Shadow Glow)
+@keyframes tg_animated_text {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+    text-shadow: none !important;
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: none !important;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: none !important;
+  }
+}
+
+// Remove hover cursor dot
+.mouseCursor,
+.cursor-outer,
+.cursor-inner {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+// Slider / Hero Section Layout, Spacing & Title Sizing
+#mouse-parallax-container {
+  width: 100% !important;
+  position: relative;
+}
+
+.slider__bg {
+  padding: 135px 0 75px !important;
+  min-height: 640px;
+  position: relative;
+  width: 100% !important;
+
+  .single-slider {
+    width: 100% !important;
+    position: relative;
+  }
+
+  .container,
+  .custom-container {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+  }
+
+  @media (max-width: 991.98px) {
+    padding: 120px 0 60px !important;
+    min-height: auto;
+  }
+}
+
+.slider__content {
+  margin: 0 !important;
+  position: relative;
+  z-index: 2;
+
+  @media (max-width: 991.98px) {
+    margin: 0 0 40px !important;
+    text-align: center;
+  }
+}
+
+.slider__content .sub-title {
+  padding: 0 !important;
+  margin: 0 0 16px !important;
+  background: none !important;
+
+  &::before {
+    display: none !important;
+    content: none !important;
+  }
+}
+
+.hero-sub-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 16px;
+  background: rgba(227, 7, 60, 0.18);
+  border: 1px solid rgba(227, 7, 60, 0.55);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(4px);
+
+  .badge-bullet {
+    width: 8px;
+    height: 8px;
+    background: #E3073C;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(227, 7, 60, 0.9);
+  }
+
+  .badge-text {
+    font-family: var(--tg-body-font-family);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #FFFFFF !important;
+    text-transform: uppercase;
+  }
+}
+
+// Hero Title (Aviator Game) Balanced Size, Accent & NO Glow
+.slider__content .title {
+  font-size: 64px !important;
+  line-height: 1.08 !important;
+  margin: 0 0 20px !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  letter-spacing: 1px !important;
+  text-shadow: none !important;
+
+  .title-accent {
+    color: #E3073C !important;
+    text-shadow: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 50px !important;
+  }
+
+  @media (max-width: 767.98px) {
+    font-size: 38px !important;
+  }
+}
+
+.slider__content .slider__desc {
+  font-size: 17px !important;
+  line-height: 1.75 !important;
+  margin-bottom: 16px !important;
+  color: #FFFFFF !important;
+  font-weight: 400 !important;
+  max-width: 560px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+
+  @media (max-width: 991.98px) {
+    max-width: 100%;
+    font-size: 16px !important;
+  }
+}
+
+.slider__content .slider__subtext {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  color: #D6DCE8 !important;
+  font-weight: 400 !important;
+  margin-bottom: 32px !important;
+  max-width: 540px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+
+  @media (max-width: 991.98px) {
+    max-width: 100%;
+    font-size: 14px !important;
+  }
+}
+
+.slider__btn {
+  margin: 0 !important;
+
+  .hero-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 30px;
+    border-radius: 4px;
+    border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+
+    span {
+      color: #ffffff !important;
+      font-weight: 700 !important;
+      letter-spacing: 1.5px;
+    }
+
+    &:hover {
+      background: #E3073C !important;
+      border-color: #E3073C !important;
+      box-shadow: 0 0 20px rgba(227, 7, 60, 0.6);
+      color: #ffffff !important;
+
+      span {
+        color: #ffffff !important;
+      }
+    }
+  }
+}
+
+.hero-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px;
+
+  .slider__img img {
+    max-width: 100%;
+    max-height: 480px !important;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 35px rgba(227, 7, 60, 0.35));
+  }
+
+  @media (max-width: 991.98px) {
+    min-height: auto;
+    margin-top: 20px;
+
+    .slider__img img {
+      max-height: 380px !important;
+    }
+  }
+}
+
+// Eliminate any stray pagination dots from hero banner area
+.slider__area {
+
+  .swiper-pagination,
+  .swiper-pagination-bullets,
+  .games-pagination-dots,
+  .slider__pagination,
+  .slick-dots {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+  }
+}
+
+// Games Area (Replacing Streamers / Mobile Showcase) Red Theme
+.streamers__area {
+  background-color: #121212 !important;
+
+  .section__title {
+    .sub-title {
+      color: #E3073C !important;
+    }
+
+    .title {
+      color: #ffffff !important;
+    }
+  }
+
+  .streamers__item {
+    border: 2px solid #2C2C2C !important;
+    background: #181818 !important;
+    border-radius: 12px !important;
+    transition: all 0.35s ease !important;
+
+    &:hover {
+      border-color: #E3073C !important;
+      box-shadow: 0 10px 30px rgba(227, 7, 60, 0.4) !important;
+
+      .streamers__thumb::after {
+        background: linear-gradient(0deg, rgba(227, 7, 60, 0.8) 0%, transparent 100%) !important;
+        opacity: 0.9 !important;
+        height: 100% !important;
+      }
+    }
+  }
+
+  .streamers__pagination-arrow {
+    background: #1E1E1E !important;
+    border: 1px solid #333333 !important;
+    color: #ffffff !important;
+
+    &:hover {
+      background: #E3073C !important;
+      border-color: #E3073C !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 15px rgba(227, 7, 60, 0.6) !important;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background: #383C4E !important;
+    opacity: 0.8 !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #E3073C !important;
+    opacity: 1 !important;
+    box-shadow: 0 0 12px rgba(227, 7, 60, 0.8) !important;
+  }
+}
+
+// Header Menu Centering
+.tgmenu__navbar-wrap {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex: 1 1 auto !important;
+
+  ul,
+  ul.navigation {
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important;
+  }
+}
+
+// Sticky Header Fix: Solid dark background when sticky so content never overlaps text
+.tg-header__area.transparent-header {
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &.tg-sticky-menu,
+  &.sticky-menu__show {
+    background: #11141a !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(227, 7, 60, 0.25) !important;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.75) !important;
+  }
+}
+
+// Why Choose Betwin (Services Area Layout) Red Theme
+.services-area.services__bg-color {
+  background-color: #121212 !important;
+
+  .section__title {
+    .sub-title {
+      color: #E3073C !important;
+    }
+
+    .title {
+      color: #ffffff !important;
+    }
+  }
+
+  .services__icon {
+    color: #E3073C !important;
+    text-shadow: 0 0 16px rgba(227, 7, 60, 0.5) !important;
+  }
+
+  .services__item:hover .services__icon {
+    color: #ff2d5f !important;
+    transform: translateY(-4px) scale(1.1) !important;
+  }
+
+  .services__content {
+    .title a:hover {
+      color: #E3073C !important;
+    }
+  }
+
+  .services__link {
+    background: #E3073C !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 30px rgba(227, 7, 60, 0.6) !important;
+
+    i {
+      color: #ffffff !important;
+    }
+
+    &:hover {
+      background: #ffffff !important;
+      color: #E3073C !important;
+      box-shadow: 0 14px 40px rgba(227, 7, 60, 0.85) !important;
+
+      i {
+        color: #E3073C !important;
+      }
+    }
+  }
+}
