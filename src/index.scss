@@ -640,11 +640,115 @@ footer {
   }
 }
 
-// Eliminate any stray pagination dots from hero banner area
+// Hero Swiper Slider Animations & Pagination
+.hero-slider-active {
+  position: relative;
+  width: 100%;
+
+  .swiper-slide {
+    opacity: 0 !important;
+    transition: opacity 0.8s ease-in-out;
+    pointer-events: none;
+
+    &-active {
+      opacity: 1 !important;
+      pointer-events: auto;
+
+      .hero-sub-badge {
+        animation: heroFadeInUp 0.6s ease forwards 0.1s;
+      }
+      .title {
+        animation: heroFadeInUp 0.7s ease forwards 0.2s;
+      }
+      .slider__desc {
+        animation: heroFadeInUp 0.8s ease forwards 0.3s;
+      }
+      .slider__subtext {
+        animation: heroFadeInUp 0.8s ease forwards 0.4s;
+      }
+      .slider__btn {
+        animation: heroFadeInUp 0.8s ease forwards 0.5s;
+      }
+      .hero-img-wrap {
+        animation: heroZoomFadeIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.15s;
+      }
+    }
+  }
+}
+
+@keyframes heroFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroZoomFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.hero-slider-pagination {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 32px;
+  position: relative !important;
+  z-index: 10;
+  width: auto !important;
+  left: auto !important;
+  bottom: auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+
+  .swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.35) !important;
+    opacity: 0.7 !important;
+    margin: 0 !important;
+    display: inline-block !important;
+    visibility: visible !important;
+    transition: all 0.35s ease !important;
+    cursor: pointer !important;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.8) !important;
+      opacity: 1 !important;
+    }
+
+    &-active {
+      width: 34px !important;
+      border-radius: 6px !important;
+      background: #E3073C !important;
+      opacity: 1 !important;
+      box-shadow: 0 0 14px rgba(227, 7, 60, 0.9) !important;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    justify-content: center;
+    margin-top: 24px;
+  }
+}
+
+// Eliminate any stray pagination dots from hero banner area (excluding hero-slider-pagination)
 .slider__area {
 
-  .swiper-pagination,
-  .swiper-pagination-bullets,
+  > .swiper-pagination:not(.hero-slider-pagination),
   .games-pagination-dots,
   .slider__pagination,
   .slick-dots {
