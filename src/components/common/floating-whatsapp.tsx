@@ -22,17 +22,9 @@ export default function FloatingWhatsApp({
         className="floating-whatsapp-btn"
         aria-label="Chat with Betwin on WhatsApp"
       >
-        {/* Pulsing Animated Halos */}
-        <span className="whatsapp-pulse"></span>
-        <span className="whatsapp-pulse-2"></span>
-
         {/* Hover / Slide-out Tooltip */}
         <div className="whatsapp-tooltip">
-          <div className="whatsapp-tooltip-header">
-            <span className="whatsapp-status-dot"></span>
-            <span className="whatsapp-status-text">Online • 24/7 Support</span>
-          </div>
-          <span className="whatsapp-tooltip-title">Chat with Betwin on WhatsApp</span>
+          <span className="whatsapp-tooltip-title">Chat on WhatsApp</span>
         </div>
 
         {/* Official WhatsApp SVG Icon */}
@@ -49,9 +41,6 @@ export default function FloatingWhatsApp({
             fill="#FFFFFF"
           />
         </svg>
-
-        {/* Online Status Badge on the Button */}
-        <span className="whatsapp-badge-online"></span>
       </a>
     </div>
   );
