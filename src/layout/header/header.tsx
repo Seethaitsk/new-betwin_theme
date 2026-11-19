@@ -60,11 +60,16 @@ const Header = ({ style_2 = false }: { style_2?: boolean }) => {
                     <ul className="list-wrap d-flex align-items-center justify-content-end m-0">
 
                       <li className="header-btn">
-                        <NavLink to="/contact" className={`${style_2 ? 'tg-btn-3 tg-svg' : 'tg-border-btn'}`}>
+                        <a
+                          href="https://play.betwin.co.na/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`${style_2 ? 'tg-btn-3 tg-svg' : 'tg-border-btn'}`}
+                        >
                           <BtnBg />
                           {style_2 && <SvgIconCom icon={'/assets/img/icons/shape02.svg'} id="svg-2" />}
-                          <i className="flaticon-edit"></i>sing in
-                        </NavLink>
+                          <i className="fas fa-play me-2" style={{ fontSize: '11px' }}></i>PLAY NOW
+                        </a>
                       </li>
 
                     </ul>
