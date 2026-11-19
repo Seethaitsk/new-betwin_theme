@@ -616,85 +616,80 @@ footer {
   }
 }
 
+// Dynamic Rotating Hero Title & Image Styles (Static remaining elements)
+.hero-title-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  margin: 0 0 20px !important;
+
+  .hero-dynamic-title {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin: 0 !important;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(14px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  }
+}
+
 .hero-img-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 480px;
 
-  .slider__img img {
+  .slider__img {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    width: 100%;
+    min-height: 480px;
+  }
+
+  .hero-dynamic-img {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
     max-width: 100%;
     max-height: 480px !important;
     height: auto;
     object-fit: contain;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 35px rgba(227, 7, 60, 0.35));
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.94);
+    transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1), transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+      pointer-events: auto;
+    }
   }
 
   @media (max-width: 991.98px) {
-    min-height: auto;
+    min-height: 380px;
     margin-top: 20px;
 
-    .slider__img img {
+    .slider__img {
+      min-height: 380px;
+    }
+
+    .hero-dynamic-img {
       max-height: 380px !important;
     }
-  }
-}
-
-// Hero Swiper Slider Animations & Pagination
-.hero-slider-active {
-  position: relative;
-  width: 100%;
-
-  .swiper-slide {
-    opacity: 0 !important;
-    transition: opacity 0.8s ease-in-out;
-    pointer-events: none;
-
-    &-active {
-      opacity: 1 !important;
-      pointer-events: auto;
-
-      .hero-sub-badge {
-        animation: heroFadeInUp 0.6s ease forwards 0.1s;
-      }
-      .title {
-        animation: heroFadeInUp 0.7s ease forwards 0.2s;
-      }
-      .slider__desc {
-        animation: heroFadeInUp 0.8s ease forwards 0.3s;
-      }
-      .slider__subtext {
-        animation: heroFadeInUp 0.8s ease forwards 0.4s;
-      }
-      .slider__btn {
-        animation: heroFadeInUp 0.8s ease forwards 0.5s;
-      }
-      .hero-img-wrap {
-        animation: heroZoomFadeIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.15s;
-      }
-    }
-  }
-}
-
-@keyframes heroFadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes heroZoomFadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.94) translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
   }
 }
 
@@ -706,36 +701,28 @@ footer {
   margin-top: 32px;
   position: relative !important;
   z-index: 10;
-  width: auto !important;
-  left: auto !important;
-  bottom: auto !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  pointer-events: auto !important;
 
-  .swiper-pagination-bullet {
-    width: 12px !important;
-    height: 12px !important;
-    border-radius: 50% !important;
-    background: rgba(255, 255, 255, 0.35) !important;
-    opacity: 0.7 !important;
-    margin: 0 !important;
-    display: inline-block !important;
-    visibility: visible !important;
-    transition: all 0.35s ease !important;
-    cursor: pointer !important;
+  .hero-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.35s ease;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.8) !important;
-      opacity: 1 !important;
+      background: rgba(255, 255, 255, 0.8);
     }
 
-    &-active {
-      width: 34px !important;
-      border-radius: 6px !important;
-      background: #E3073C !important;
-      opacity: 1 !important;
-      box-shadow: 0 0 14px rgba(227, 7, 60, 0.9) !important;
+    &.active {
+      width: 34px;
+      border-radius: 6px;
+      background: #E3073C;
+      box-shadow: 0 0 14px rgba(227, 7, 60, 0.9);
     }
   }
 
@@ -745,10 +732,10 @@ footer {
   }
 }
 
-// Eliminate any stray pagination dots from hero banner area (excluding hero-slider-pagination)
+// Eliminate any stray pagination dots from hero banner area
 .slider__area {
 
-  > .swiper-pagination:not(.hero-slider-pagination),
+  .swiper-pagination,
   .games-pagination-dots,
   .slider__pagination,
   .slick-dots {
